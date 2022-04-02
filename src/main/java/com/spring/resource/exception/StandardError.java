@@ -2,8 +2,7 @@ package com.spring.resource.exception;
 
 import java.io.Serializable;
 
-public class StandardError implements Serializable{
-	
+public class StandardError implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Long timestamp;
@@ -11,7 +10,7 @@ public class StandardError implements Serializable{
 	private String error;
 	private String message;
 	private String path;
-	
+
 	public StandardError() {
 	}
 
@@ -63,7 +62,5 @@ public class StandardError implements Serializable{
 	public void setPath(String path) {
 		this.path = path;
 	}
-	
-	
 
 }

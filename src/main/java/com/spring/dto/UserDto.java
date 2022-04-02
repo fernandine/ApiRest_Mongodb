@@ -10,9 +10,8 @@ public class UserDto implements Serializable {
 	private String id;
 	private String name;
 	private String email;
-	
+
 	public UserDto() {
-		
 	}
 
 	public UserDto(User obj) {
@@ -44,6 +43,5 @@ public class UserDto implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
+
 }

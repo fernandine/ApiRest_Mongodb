@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.spring.domain.Post;
 import com.spring.domain.User;
+import com.spring.dto.AuthorDto;
 import com.spring.repository.PostRepository;
 import com.spring.repository.UserRepository;
 
@@ -26,16 +27,16 @@ public class Instantiation implements CommandLineRunner {
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
-		
+
 		userRepository.deleteAll();
 		postRepository.deleteAll();
-		
+
 		User maria = new User(null, "Maria Brown", "maria@gmail.com");
 		User alex = new User(null, "Alex Green", "alex@gmail.com");
 		User bob = new User(null, "Bob Grey", "bob@gmail.com");
-		
-		Post post1 = new Post(null, sdf.parse("21/03/2021"), "Partiu viagem", "Vou viajar para são paulo. abraços!", maria);
-		Post post2 = new Post(null, sdf.parse("22/10/2020"), "Bom dia", "Acordei feliz hoje", maria);
+
+		Post post1 = new Post(null, sdf.parse("21/03/2021"), "Partiu viagem", "Vou viajar para são paulo. abraços!", new AuthorDto(maria));
+		Post post2 = new Post(null, sdf.parse("22/10/2020"), "Bom dia", "Acordei feliz hoje", new AuthorDto(maria));
 
 		userRepository.saveAll(Arrays.asList(maria, alex, bob));
 		postRepository.saveAll(Arrays.asList(post1, post2));
